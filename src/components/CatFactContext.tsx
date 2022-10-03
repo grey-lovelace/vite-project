@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactElement, useEffect, useState } from "react";
-import { createContextAndHook } from "./context-utils"
+import { createContextAndHook } from "../utils/context-utils"
 
 export interface CatFactContext {
     fact: string

@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useState } from 'react'
 import { useCatFactContext } from './CatFactContext'
 
@@ -8,8 +8,8 @@ function FactDisplay() {
 
     return (
         <Box className="fact-display">
-            <h1>FACT:</h1>
-            <h3>{catFactContext.fact}</h3>
+            <Typography>FACT:</Typography>
+            <Typography>{catFactContext.fact}</Typography>
         </Box>
     )
 }

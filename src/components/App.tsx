@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
 import { CatFactContextProvider, useCatFactContext } from './CatFactContext'
 import FactDisplay from './FactDisplay'
 import { Box, Button } from '@mui/material'

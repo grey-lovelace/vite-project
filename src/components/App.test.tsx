@@ -20,4 +20,9 @@ describe("Simple working test", () => {
     await render(<App />);
     waitFor(() => expect(screen.getByText(/this is a cat fact/i)).toBeInTheDocument());
   });
+
+  it("should route to other page", async () => {
+    await render(<App />), '/newRoute';
+    waitFor(() => expect(screen.getByText(/This is a different page/i)).toBeInTheDocument());
+  });
 });

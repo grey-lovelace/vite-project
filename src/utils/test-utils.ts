@@ -1,15 +1,14 @@
-/* eslint-disable import/export */
 import { act, render } from "@testing-library/react";
+import { ReactElement } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 export const flushPromises = (): Promise<void> => new Promise(resolve => process.nextTick(resolve));
 
-const customRender = async (ui: any, options: any = {}) => {
+const customRender = async (ui: ReactElement, path: string = '/') => {
+    window.history.pushState({}, '', path);
     await act(async () => {
         render(ui, {
-            // wrap provider(s) here if needed
-            wrapper: (BrowserRouter),
-            ...options,
+            wrapper: (BrowserRouter)
         });
         await flushPromises();
     });
@@ -18,5 +17,4 @@ const customRender = async (ui: any, options: any = {}) => {
 
 export * from "@testing-library/react";
 export { default as userEvent } from "@testing-library/user-event";
-// override render export
 export { customRender as render };
